@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'udemy-angular-lesson';
+  // テンプレートに流し込む値をここで設定
+  title = 'Hello Angular!';
 }
