@@ -9,4 +9,5 @@ export class AppComponent {
   // テンプレートに流し込む値をここで設定
   title = 'Hello Angular!';
   isAngular = true;
+  num = 20;
 }
