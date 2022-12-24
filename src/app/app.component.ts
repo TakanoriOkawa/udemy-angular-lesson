@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // テンプレートに流し込む値をここで設定
-  title = 'Hello Angular!';
+  title = '自社社員名簿';
   isAngular = true;
   num = 20;
 }
