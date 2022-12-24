@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Member } from '../member';
 
 @Component({
   selector: 'app-members',
@@ -7,7 +8,10 @@ import { Component } from '@angular/core';
 })
 export class MembersComponent {
 
-  member = "田中";
+  member: Member = {
+    id: 1,
+    name: "田中太郎"
+  }
 
   // ライフサイクルメソッドが入ってくる
 }
