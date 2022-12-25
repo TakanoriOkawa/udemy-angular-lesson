@@ -9,10 +9,16 @@ import { MEMBERS } from '../mock-members';
 })
 export class MembersComponent {
   members = MEMBERS;
-  
+
   member: Member = {
     id: 1,
     name: "田中太郎"
+  }
+
+  selectedMember: Member;
+
+  onSelected = (member: Member): void => {
+    this.selectedMember = member
   }
 
   // ライフサイクルメソッドが入ってくる
