@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Member } from '../member';
-import { MEMBERS } from '../mock-members';
+import { MemberService } from '../member.service'; // classの型を取得
 
 @Component({
   selector: 'app-members',
@@ -8,17 +8,26 @@ import { MEMBERS } from '../mock-members';
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent {
-  members = MEMBERS;
-
-  member: Member = {
-    id: 1,
-    name: "田中太郎"
-  }
+  // service（外部）からデータを取得する
+  members: Member[];
 
   selectedMember: Member;
 
+  // DI
+  constructor(private  memberService :MemberService){}
+
+  ngOnInit(): void {
+    console.log("ライフサイクル")
+    // コンポーネントの初期化時に実行
+    this.getMembers();
+  }
+
   onSelected = (member: Member): void => {
     this.selectedMember = member
+  }
+
+  getMembers(): void {
+    this.members = this.memberService.getMembers();
   }
 
   // ライフサイクルメソッドが入ってくる
