@@ -3,6 +3,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { MembersComponent } from './members/members.component';
 
 const routes: Routes = [
+  // pathとコンポーネントの設定
   {path: 'members', component: MembersComponent}
 ]
 
