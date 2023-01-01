@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Member } from '../member';
 import { MemberService } from '../member.service'; // classの型を取得
+import { MessagesService } from '../messages.service';
 
 @Component({
   selector: 'app-members',
@@ -14,7 +15,10 @@ export class MembersComponent {
   selectedMember: Member;
 
   // DI
-  constructor(private  memberService :MemberService){}
+  constructor(
+    private memberService :MemberService,
+    private messagesService :MessagesService
+  ){}
 
   ngOnInit(): void {
     console.log("ライフサイクル")
@@ -23,6 +27,7 @@ export class MembersComponent {
   }
 
   onSelected = (member: Member): void => {
+    this.messagesService.add(`MessageComponent: 社員データ(id=${member.id})が選択されました。`);
     this.selectedMember = member
   }
 
