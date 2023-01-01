@@ -1,0 +1,9 @@
+<p>messages works!</p>
+
+<div *ngIf="messagesService.messages.length">
+  メッセージサービスの変数にアクセスできている
+</div>
+
+<!-- サービスのプロパティを使うには、DIした際に指定した変数名にプロパティを指定することで決める -->
+<!-- message.〇〇 -->
+<p>{{messagesService.test}}</p>
