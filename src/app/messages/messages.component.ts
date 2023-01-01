@@ -8,5 +8,5 @@ import { MessagesService } from '../messages.service';
 })
 export class MessagesComponent {
   // HTMLテンプレートから変数、メソッドを参照するにはアクセス修飾子をpublicにする
-  constructor(public messagesService :MessagesService){}
+  constructor(public messagesService :MessagesService){}  
 }
