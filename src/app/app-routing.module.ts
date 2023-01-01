@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule,Routes } from '@angular/router';
+import { MembersComponent } from './members/members.component';
 
-
+const routes: Routes = [
+  {path: 'members', component: MembersComponent}
+]
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule
+    // ルーティングをアプリ全体で使用する設定
+    RouterModule.forRoot(routes)
+  ],
+  exports: [ // app.module.tsで使用するためにexport
+    RouterModule
   ]
 })
 export class AppRoutingModule { }
